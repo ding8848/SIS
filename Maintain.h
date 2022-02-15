@@ -15,6 +15,6 @@
 #include "Save.h"
 #include "VerificationIdentity.h"
 
-int Maintain(void);
+int Maintain(stu *head);
 
 #endif /* Maintain_h */
