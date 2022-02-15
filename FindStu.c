@@ -7,7 +7,7 @@
 
 #include "FindStu.h"
 
-int FindNumber(void) {
+int FindNumber(stu *head) {
     char input_nu[11]; //  输入的学生学号
     stu *p;
     int flag;
@@ -33,7 +33,7 @@ int FindNumber(void) {
     return flag;
 }
 
-int FindAddrApart(void) {
+int FindAddrApart(stu *head) {
     char input_ad[20]; //  输入的学生地址
     stu *p;
     int flag;
@@ -59,7 +59,7 @@ int FindAddrApart(void) {
     return flag;
 }
 
-int FindName(void) {
+int FindName(stu *head) {
     char input_na[10]; //  输入的学生名字
     stu *p;
     int flag;
