@@ -7,10 +7,9 @@
 
 #include "MaintainStu.h"
 
-int Add(void) {
+int Add(stu *head) {
     stu *p2, *p3;
     char ch;
-    system("stty -icanon");
     int addFlag = 3; //  初始化为3, 防止影响到 Maintain 模块的循环逻辑
     p2 = head;
     while(p2->next!=NULL) {
@@ -62,12 +61,11 @@ int Add(void) {
     return addFlag;
 } //  添加新的学生信息
 
-int Del(void) {
+int Del(stu *head) {
     char ch, input_No[11];
     int deleteFlag = 2; //  初始化为2, 防止影响到 Maintain 模块的循环逻辑
     stu *p2, *p3;
     ch = 'y';
-    system("stty -icanon");
     while(tolower(ch)=='y') {
         printf("\n 请输入要删除学生的学号(回车确认): ");
         gets(input_No);
@@ -102,7 +100,7 @@ int Del(void) {
     return deleteFlag;
 } //  删除指定学生信息
 
-int Set(void) {
+int Set(stu *head) {
     int SetFlag = 7; //  初始化为7, 防止影响到 Maintain 模块的循环逻辑
     char ch, input_No[11];
     stu *p2, *p3;
