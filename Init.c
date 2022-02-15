@@ -7,17 +7,19 @@
 
 #include "Init.h"
 
-int Init(void) {
+stu *head; //  初始化head
+
+stu *Init(void) {
     FILE *fp;
-    stu *p2, *p3 = NULL;
-    fp = fopen("DATASHEET.DAT", "r");
+    stu *p1, *p2;
+    fp = fopen("/Users/dingjiacheng/Desktop/ding/C_Playground/SIS/FILE.DAT ", "r+");
     if(fp==NULL) {
         printf("\n 初始化失败!\n");
         fclose(fp);
-        return 0;
+        return NULL;
     } else {
-        p2 = (stu*)malloc(LEN);
-        head = p2;
+        p1 = (stu*)malloc(LEN);
+        head = p1;
         while(!feof(fp)) {
             fscanf(fp, "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t\n" , p2->No
                                                   , p2->name
@@ -28,15 +30,28 @@ int Init(void) {
                                                   , p2->email
                                                   , p2->QQ
                                                   , p2->tel);
-            p3 = p2;
-            p3 = (stu*)malloc(LEN);
-            p3 -> next = p2;
+            p2 = p1;
+            p1 = (stu*)malloc(LEN);
+            p2 -> next = p1;
         } //  将文件中读到的学生信息存到链表head里
-        p3 -> next = NULL;
-        p3 = NULL;
-        free(p2);
+        p2 -> next = NULL;
         p2 = NULL;
+        free(p1);
+        p1 = NULL;
+        p1 = head;
+        while(p1 != NULL) {
+            printf(fp, "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t\n" , p2->No
+                                                  , p2->name
+                                                  , p2->age
+                                                  , p2->sex
+                                                  , p2->className
+                                                  , p2->address
+                                                  , p2->email
+                                                  , p2->QQ
+                                                  , p2->tel);
+            p1 = p1 -> next;
+        }
         fclose(fp);
-        return 1;
+        return head;
     }
 } //  初始化, 从数据表中读取学生信息
