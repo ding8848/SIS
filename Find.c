@@ -7,7 +7,7 @@
 
 #include "Find.h"
 
-int Find(void) {
+int Find(stu *head) {
     char ch;
     system("stty -icanon");
     int flag;
@@ -21,11 +21,11 @@ int Find(void) {
         printf("请输入选择(A/S/D/Q): ");
         ch = getchar();
         switch(tolower(ch)) {
-            case 'a': flag = FindAddrApart(); //  查找地址,实现在FindStu模块里
+            case 'a': flag = FindAddrApart(head); //  查找地址,实现在FindStu模块里
                       break;
-            case 's': flag = FindNumber(); //  查找学号,实现在FindStu模块里
+            case 's': flag = FindNumber(head); //  查找学号,实现在FindStu模块里
                       break;
-            case 'd': flag = FindName(); //  查找姓名,实现在FindStu模块里
+            case 'd': flag = FindName(head); //  查找姓名,实现在FindStu模块里
                       break;
             case 'q': flag = 0; //  退出
                       break;
