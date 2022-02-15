@@ -14,24 +14,24 @@
 
 int main(int argc, char *argv[]) {
     char ch;
-    system("stty -icanon"); //  关闭系统缓存功能
-    int initFlag, quitFlag, maintainFlag, findFlag;
+    int quitFlag, maintainFlag, findFlag;
     quitFlag = 1;
-    initFlag = Init();
-    if(initFlag)
+    stu *temp; //  指向初始化后的head
+    temp = Init();
+    if(temp!=NULL)
         while(quitFlag) {
             printf("\n\t\t********学生信息查询系统(SIS)********\n");
             printf("\t\t*             Q(Query).查询           *\n");
             printf("\t\t*             W(Write/Maintain).维护           *\n");
             printf("\t\t*             E(Exit).退出           *\n");
             printf("\t\t***************************************\n");
-            printf("请选择(Q/W/E)");
+            printf("请选择(Q/W/E): ");
             ch = getchar();
             
             switch(tolower(ch)) {
-                case 'q': findFlag = Find(); //  查询模式,实现在Find模块里
+                case 'q': findFlag = Find(temp); //  查询模式,实现在Find模块里
                           break;
-                case 'w': maintainFlag = Maintain();
+                case 'w': maintainFlag = Maintain(temp);
                     //  维护模式,实现在Maintain模块里
                           break;
                 case 'e': quitFlag = 0; //  退出
@@ -46,6 +46,9 @@ int main(int argc, char *argv[]) {
     }
     printf("\n 再见！请按任意键退出.");
     getchar();
+    temp -> next = NULL;
+    temp = NULL;
+    free(temp);
     return 0;
 }
 
