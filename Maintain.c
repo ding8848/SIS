@@ -7,7 +7,7 @@
 
 #include "Maintain.h"
 
-int Maintain(void) {
+int Maintain(stu *head) {
     char ch;
     system("stty -icanon");
     int success, saveFlag, flag = 4;
@@ -26,11 +26,11 @@ int Maintain(void) {
             printf("\n 请输入您的选择(A/S/D/Q): ");
             ch = getchar();
             switch(tolower(ch)) {
-                case 'a': flag = Add(); //  增加学生信息
+                case 'a': flag = Add(head); //  增加学生信息
                           break;
-                case 's': flag = Set(); //  修改学生信息
+                case 's': flag = Set(head); //  修改学生信息
                           break;
-                case 'd': flag = Del(); //  删除学生信息
+                case 'd': flag = Del(head); //  删除学生信息
                           break;
                 case 'q': flag = 0; //  退出
                           break;
@@ -42,7 +42,7 @@ int Maintain(void) {
         printf("请您确认是否保存您所做的修改?(Y/N): ");
         ch = getchar();
         if(tolower(ch)=='y') {
-            saveFlag = Save();
+            saveFlag = Save(head);
             if(saveFlag==0) {
                 flag = 4; //  保存成功标识
                 printf("\n 保存成功! \n");
