@@ -17,12 +17,11 @@ typedef struct student {
     char className[10], address[30], email[20], QQ[15], tel[11];
     struct student *next;
 }stu; //  自定义一个存储学生信息的结构体类型
-stu *head; //  FindStu, MaintainStu 等模块共用
 
 #define LEN sizeof(stu) //  stu类型的大小
 
-int FindNumber(void);
-int FindAddrApart(void);
-int FindName(void);
+int FindNumber(stu *head);
+int FindAddrApart(stu *head);
+int FindName(stu *head);
 
 #endif /* FindStu_h */
