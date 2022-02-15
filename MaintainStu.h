@@ -11,8 +11,8 @@
 #include "FindStu.h"
 #include <ctype.h>
 
-int Add(void);
-int Del(void);
-int Set(void);
+int Add(stu *head);
+int Del(stu *head);
+int Set(stu *head);
 
 #endif /* MaintainStu_h */
