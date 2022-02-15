@@ -12,9 +12,8 @@ int VerificationIdentity(void) {
     char SID[20], key[20]; //  SID: 已注册用户名, key: 已注册口令
     int i, legalFlag = 0; //  用户名和密码匹配标识
     char ch;
-    system("stty -icanon");
     FILE *fp;
-    fp = fopen("keygenSIS.txt", "r");
+    fp = fopen("/Users/dingjiacheng/Desktop/ding/C_Playground/SIS/keygenSIS.txt", "r");
     if(fp==NULL) {
         printf("\n ID文件不存在! 按任意键继续...\n");
         getchar();
@@ -24,7 +23,6 @@ int VerificationIdentity(void) {
             
             i = 0;
             while (isalpha(ch=getchar())&&(i<15)) {
-                putchar(ch);
                 UID[i] = ch;
                 i++;
             } //  限定用户名只可以输入英文
@@ -33,7 +31,6 @@ int VerificationIdentity(void) {
             
             i = 0;
             while (isdigit(ch=getchar())&&(i<10)) {
-                putchar('*'); //  隐藏输入
                 pwd[i] = ch;
                 i++;
             } //  限定用户名只可以输入英文
