@@ -17,7 +17,7 @@ int Save(void) {
     } else {
         rewind(fp); //  使文件位置指针重回文件开始的位置
         while(p!=NULL) {
-            fprintf(fp, "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t\n"                                             , p->No
+            fprintf(fp, "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t\n" , p->No
                                                   , p->name
                                                   , p->age
                                                   , p->sex

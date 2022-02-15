@@ -19,7 +19,7 @@ int Init(void) {
         p2 = (stu*)malloc(LEN);
         head = p2;
         while(!feof(fp)) {
-            fscanf(fp, "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t\n"                                              , p2->No
+            fscanf(fp, "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t\n" , p2->No
                                                   , p2->name
                                                   , p2->age
                                                   , p2->sex

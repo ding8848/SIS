@@ -14,7 +14,7 @@ int VerificationIdentity(void) {
     char ch;
     system("stty -icanon");
     FILE *fp;
-    fp = fopen("keygen(SIS).txt", "r");
+    fp = fopen("keygenSIS.txt", "r");
     if(fp==NULL) {
         printf("\n ID文件不存在! 按任意键继续...\n");
         getchar();
