@@ -10,6 +10,6 @@
 
 #include "FindStu.h"
 
-int Save(void);
+int Save(stu *head);
 
 #endif /* Save_h */
