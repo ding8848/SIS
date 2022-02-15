@@ -11,6 +11,6 @@
 #include <stdio.h>
 #include "FindStu.h"
 
-int Init(void);
+stu *Init(void);
 
 #endif /* Init_h */
