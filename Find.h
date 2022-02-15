@@ -13,6 +13,6 @@
 #include <ctype.h>
 #include "FindStu.h"
 
-int Find(void);
+int Find(stu *head);
 
 #endif /* Find_h */
