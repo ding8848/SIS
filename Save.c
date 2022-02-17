@@ -10,7 +10,7 @@ int Save(stu *head) {
     FILE *fp;
     stu *p;
     p = head;
-    if((fp=fopen("/Users/dingjiacheng/Desktop/ding/C_Playground/SIS/FILE.DAT", "w"))==NULL) {
+    if((fp=fopen("./FILE.DAT", "w"))==NULL) {
         printf("\n 保存文件不正常, 请检查! \n");
         fclose(fp);
         return 1;
