@@ -12,7 +12,7 @@ stu *Init(void) {
     stu *head, *p, *r; //  r是尾节点
     head = NULL;
     r = NULL;
-    fp = fopen("/Users/dingjiacheng/Desktop/ding/C_Playground/SIS/FILE.DAT ", "r+");
+    fp = fopen("./FILE.DAT ", "r");
     if(fp==NULL) {
         printf("\n 初始化失败!\n");
         fclose(fp);
