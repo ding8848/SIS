@@ -13,7 +13,7 @@ int VerificationIdentity(void) {
     int i, legalFlag = 0; //  用户名和密码匹配标识
     char ch;
     FILE *fp;
-    fp = fopen("/Users/dingjiacheng/Desktop/ding/C_Playground/SIS/keygenSIS.txt", "r");
+    fp = fopen("./keygenSIS.txt", "r");
     if(fp==NULL) {
         printf("\n ID文件不存在! 按任意键继续...\n");
         getchar();
